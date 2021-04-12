@@ -5,21 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
     <title>Dividir e Conquistar</title>
 </head>
-<body onload="" style="background-color:#e1eddc">
+<body onload="" style="background-color:#b5b5b5">
     <div class="landing">
         <h1>
             Contagem de inversões
         </h1>
-        <div id="main">
+        <div id="main"></div>
 
-        </div>
         <button id="botao">contar</button>
+
+        <br><br>
+        <div id='dotchart'style='position: relative'></div>
     </div>    
 </body>
 <footer>
     <p>&copy; Ailamar Alves & Matheus Amaral</p>
 </footer>
 <script src="./script.js"></script>
+<script src="./chart.js"></script>
 </html>
