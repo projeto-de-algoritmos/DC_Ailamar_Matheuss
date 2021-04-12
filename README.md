@@ -11,7 +11,7 @@
 17/0080307    | Matheus Amaral Moreira
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Esse projeto visa ordenar um vetor qualquer utilizando os métodos passados nas aulas contando cada inversão dos valores ao longo da ordenação e com um gráfico para melhor visualização de como foi a mudança do caso inicial ao estado final do vetor.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
