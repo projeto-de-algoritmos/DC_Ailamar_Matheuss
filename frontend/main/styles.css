@@ -1,0 +1,15 @@
+.landing {
+    border: 3px solid #000;
+    margin: 30px;
+    width: 90%;
+    height: 600px;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
