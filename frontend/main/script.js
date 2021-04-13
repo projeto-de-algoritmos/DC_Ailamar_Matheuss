@@ -6,13 +6,13 @@ let emb = document.getElementById("embaralhar");
 botao.addEventListener("click", main);
 emb.addEventListener("click", embaralhar);
 
-var votingPop = [90, 80, 1, 4, 20,
+var aleatorio = [90, 80, 1, 4, 20,
     10, 100, 2, 50, 40,
     25, 35, 86, 92, 6,
     99, 300, 8, 5, 400,
     60, 30, 120, 3, 5];
 
-var regVoters = [];
+var ordenado = [];
 
 
 function embaralhar() {
@@ -22,29 +22,27 @@ function embaralhar() {
         aux.push(Math.floor(Math.random() * 100));
     }
 
-    votingPop.splice(0, 25);
-    votingPop.push(...aux);
+    aleatorio.splice(0, 25);
+    aleatorio.push(...aux);
 }
 
 
 function main() {
 
-    votingPop.sort(() => Math.random() - 0.5);
-    const aux = [...votingPop];
+    aleatorio.sort(() => Math.random() - 0.5);
+    const aux = [...aleatorio];
     
-    elementos.innerHTML = `<p>vetor: ${votingPop}</p>`;
-    let media = medianaMedianas(votingPop);
+    elementos.innerHTML = `<p><strong>Vetor:</strong> ${aleatorio.join(', ')}</p>`;
+    let media = medianaMedianas(aleatorio);
     const aux2 = mergeSort(aux);
-    regVoters.splice(0, 25);
-    regVoters.push(...aux2);
-    elementos.innerHTML += `<p>mediana oráculo: ${media}</p>`;
-    elementos.innerHTML += `<p>vetor ordenado: ${regVoters}</p>`;
+    ordenado.splice(0, 25);
+    ordenado.push(...aux2);
+    elementos.innerHTML += `<p><strong>Mediana oráculo:</strong> ${media}</p>`;
+    elementos.innerHTML += `<p><strong>Vetor ordenado:</strong> ${ordenado.join(', ')} </p>`;
 
     Plotly.newPlot('dotchart', data, layout);
 
 }
-
-
 
 function medianaV(vetor) {
     // insertionsort por padrao
@@ -107,15 +105,12 @@ function mergeSort(array) {
 
 
 
-var point = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', 
-            /* '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50',
-            '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75',
-            '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', */];
+var point = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'];
 
 var trace1 = {
 type: 'scatter',
 x: point,
-y: votingPop,
+y: aleatorio,
 mode: 'markers',
 name: 'Vetor desordenado',
 marker: {
@@ -131,7 +126,7 @@ marker: {
 
 var trace2 = {
 x: point,
-y: regVoters,
+y: ordenado,
 mode: 'markers',
 name: 'Vetor ordenado',
 marker: {
