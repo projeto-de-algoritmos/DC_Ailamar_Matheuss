@@ -3,19 +3,21 @@ let elementos = document.getElementById("main");
 let botao = document.getElementById("botao");
 let emb = document.getElementById("embaralhar");
 
-botao.addEventListener("click", main);
-emb.addEventListener("click", embaralhar);
+emb.addEventListener("click", main);
+botao.addEventListener("click", criarNovo);
 
 var aleatorio = [90, 80, 1, 4, 20,
-    10, 100, 2, 50, 40,
+    10, 42, 2, 50, 40,
     25, 35, 86, 92, 6,
-    99, 300, 8, 5, 400,
-    60, 30, 120, 3, 5];
+    99, 84, 8, 5, 100,
+    60, 30, 19, 3, 5];
 
 var ordenado = [];
 
+var media = [];
 
-function embaralhar() {
+
+function criarNovo() {
     let aux = []
 
     for(let i = 0; i < 25; i++){
@@ -33,7 +35,8 @@ function main() {
     const aux = [...aleatorio];
     
     elementos.innerHTML = `<p><strong>Vetor:</strong> ${aleatorio.join(', ')}</p>`;
-    let media = medianaMedianas(aleatorio);
+    media.splice(0, 1);
+    media.push(medianaMedianas(aleatorio));
     const aux2 = mergeSort(aux);
     ordenado.splice(0, 25);
     ordenado.push(...aux2);
@@ -140,7 +143,24 @@ marker: {
 }
 };
 
-var data = [trace1, trace2];
+var trace3 = {
+    x: point,
+    y: media,
+    mode: 'markers',
+    name: 'Mediana do oráculo',
+    marker: {
+        color: 'rgba(232, 46, 46, 0.95)',
+        line: {
+        color: 'rgba(247, 57, 57, 1.0)',
+        width: 1,
+        },
+        symbol: 'square',
+        size: 10
+    }
+    };
+    
+
+var data = [trace1, trace2, trace3];
 
 var layout = {
 title: 'Inversões',
